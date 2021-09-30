@@ -12,5 +12,5 @@ human_one = Human()
 print(human_one)
 print(human_one.born_year)
 
-human_one.say_hello()#aqui estamos invocando
-human_one.say_hello_user("Ivan")#aqui estamos invocando
+human_one.say_hello()
+human_one.say_hello_user("Ivan")
