@@ -19,9 +19,13 @@ class Job:
     def new_job_position(self, job_salary, job_position, job_location, job_company):
         return "+There is a new job position at " +job_company+" with a starting salary of $"+str(job_salary)+". Company is located in "+job_location+". They're looking for a "+job_position
 
-    def job_salary_increase(self, job_salary, job_position, job_company):
-        job_salary = job_salary * 1.5
-        return "+"+job_company+" has increased the salary for all "+job_position+"'s to "+ str(job_salary)
+    def job_salary_increase(self, job_salary, job_position, job_working_hours):
+        if job_working_hours > 40 and job_position == "Software Engineer":
+            job_salary = job_salary * 1.25
+            return "+The salary for the "+job_position+" position has increased to $"+str(job_salary)+" if the employee works more than 40 hours per week"
+        else:
+            return "+The salary for the "+job_position+" position has not increased."
+
 
     def employee_will_get_raise(self, job_position, job_working_hours):
         if job_working_hours > 40 and job_position == "Software Engineer":
@@ -36,5 +40,5 @@ print(new_job.job_is_hiring())
 print(new_job.job_is_not_hiring())
 print(new_job.job_is_open())
 print(new_job.new_job_position(new_job.job_salary, new_job.job_position, new_job.job_location, new_job.job_company))
-print(new_job.job_salary_increase(new_job.job_salary, new_job.job_position, new_job.job_company))
+print(new_job.job_salary_increase(new_job.job_salary, new_job.job_position, new_job.job_working_hours))
 print(new_job.employee_will_get_raise(new_job.job_position, new_job.job_working_hours)) 
