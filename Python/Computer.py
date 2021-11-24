@@ -1,3 +1,5 @@
+""" Computer Elements """
+
 class Case:
     def __init__(self, id, brand, color, material, form_factor):
         self.id = id
